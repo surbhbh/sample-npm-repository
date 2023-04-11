@@ -1,0 +1,26 @@
+version: 0.2
+
+env:
+  variables:
+    TEST_REPORT_DIR: results
+    COVERAGE_REPORT_DIR: coverage
+phases:
+  pre_build:
+    commands:
+      - mkdir -p "$TEST_REPORT_DIR"
+      - mkdir -p "$COVERAGE_REPORT_DIR"
+      - npm install
+  build:
+    commands:
+      - npm build
+      - npm test
+
+reports:
+  jest_reports:
+    files:
+      - results/**/*
+    file-format: JUNITXML
+  CoverageReports:
+    files:
+      - coverage/**/*
+    file-format: CLOVERXML
