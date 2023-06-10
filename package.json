@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/MyGet/sample-npm-repository",
   "dependencies": {
-    "bootstrap": "^3.3.2",
-     "npm install"
+    "bootstrap": "^3.3.2"
   }
 }
